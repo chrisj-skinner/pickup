@@ -4,6 +4,23 @@
   </div>
 </template>
 
+<script>
+export default {
+  head() {
+    return {
+      titleTemplate: '%s - Pickup app',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Pickup app built on nuxtjs'
+        }
+      ]
+    }
+  }
+}
+</script>
+
 <style>
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
