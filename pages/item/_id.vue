@@ -1,26 +1,43 @@
 <template>
-  <div>
-    <h1>Item #{{ this.$route.params.id }}</h1>
-  </div>
+  <!-- <Item /> -->
+  <section class="container">
+    <div>{{ item.title }}</div>
+  </section>
 </template>
 
 <script>
+// import Item from '~/components/Item.vue'
 export default {
+  // Components
+  components: {
+    // Item
+  },
+  // SEO
   head() {
     return {
-      titleTemplate: 'Item #' + this.id,
+      titleTemplate: this.item.title,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: 'All there is to know about Item #' + this.id
+          content: 'All there is to know about ' + this.item.title
         }
       ]
     }
   },
-  computed: {
-    id() {
-      return this.$route.params.id
+  async asyncData({ $axios, error, params }) {
+    try {
+      const { data } = await $axios.get(
+        'http://localhost:4000/items/' + params.id
+      )
+      return {
+        item: data
+      }
+    } catch (e) {
+      error({
+        statusCode: 503,
+        message: 'Unable to fetch item #' + params.id
+      })
     }
   }
 }
