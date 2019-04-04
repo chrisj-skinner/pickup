@@ -4,7 +4,18 @@
       <Logo />
       <h1 class="title">..pickup..</h1>
       <h2 class="subtitle">Pickup app built on nuxtjs</h2>
-      <Navbar />
+      <div class="content">
+        <Navbar />
+      </div>
+      <div class="columns">
+        <ItemCard
+          v-for="(item, index) in items"
+          :key="index"
+          :item="item"
+          :data-index="index"
+          class="column is-half"
+        ></ItemCard>
+      </div>
     </div>
   </section>
 </template>
@@ -12,18 +23,28 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import Navbar from '~/components/Navbar.vue'
+import ItemCard from '~/components/ItemCard.vue'
 
 export default {
   components: {
     Logo,
-    Navbar
+    Navbar,
+    ItemCard
   },
   head() {
     return {
       title: 'Welcome'
     }
+  },
+  asyncData({ $axios }) {
+    return $axios.get('http://localhost:4000/items').then(response => {
+      return {
+        items: response.data
+      }
+    })
   }
 }
+// console.log(this.items)
 </script>
 
 <style>
