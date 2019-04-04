@@ -26,25 +26,33 @@ import Navbar from '~/components/Navbar.vue'
 import ItemCard from '~/components/ItemCard.vue'
 
 export default {
+  // Components
   components: {
     Logo,
     Navbar,
     ItemCard
   },
+  // SEO
   head() {
     return {
       title: 'Welcome'
     }
   },
-  asyncData({ $axios }) {
-    return $axios.get('http://localhost:4000/items').then(response => {
+  // Call the local server and catch any errors
+  async asyncData({ $axios, error }) {
+    try {
+      const { data } = await $axios.get('http://localhost:4000/items')
       return {
-        items: response.data
+        items: data
       }
-    })
+    } catch (e) {
+      error({
+        statusCode: 503,
+        message: 'Unable to fetch items at this time Please try again.'
+      })
+    }
   }
 }
-// console.log(this.items)
 </script>
 
 <style>
