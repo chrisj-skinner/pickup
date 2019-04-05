@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="has-text-centered">
     <Logo />
     <h1 class="title">..pickup..</h1>
     <h2 class="subtitle">Pickup app built on nuxtjs</h2>

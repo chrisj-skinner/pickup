@@ -1,9 +1,7 @@
 <template>
   <div class="columns is-centered">
     <div class="column is-half">
-      <div class="has-text-centered">
-        <nuxt />
-      </div>
+      <nuxt />
     </div>
   </div>
 </template>
