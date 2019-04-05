@@ -1,6 +1,10 @@
 <template>
-  <div>
-    <nuxt />
+  <div class="columns is-centered">
+    <div class="column is-half">
+      <div class="has-text-centered">
+        <nuxt />
+      </div>
+    </div>
   </div>
 </template>
 

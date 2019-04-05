@@ -1,23 +1,21 @@
 <template>
-  <section class="container">
-    <div>
-      <Logo />
-      <h1 class="title">..pickup..</h1>
-      <h2 class="subtitle">Pickup app built on nuxtjs</h2>
-      <div class="content">
-        <Navbar />
-      </div>
-      <div class="columns">
-        <ItemCard
-          v-for="(item, index) in items"
-          :key="index"
-          :item="item"
-          :data-index="index"
-          class="column is-half"
-        ></ItemCard>
-      </div>
+  <div>
+    <Logo />
+    <h1 class="title">..pickup..</h1>
+    <h2 class="subtitle">Pickup app built on nuxtjs</h2>
+    <div class="content">
+      <Navbar />
     </div>
-  </section>
+    <div class="columns">
+      <ItemCard
+        v-for="(item, index) in items"
+        :key="index"
+        :item="item"
+        :data-index="index"
+        class="column is-half"
+      ></ItemCard>
+    </div>
+  </div>
 </template>
 
 <script>
