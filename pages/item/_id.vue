@@ -1,16 +1,15 @@
 <template>
-  <!-- <Item /> -->
-  <section class="container">
-    <div>{{ item.title }}</div>
+  <section class="section">
+    <Item :item="item" />
   </section>
 </template>
 
 <script>
-// import Item from '~/components/Item.vue'
+import Item from '~/components/Item.vue'
 export default {
   // Components
   components: {
-    // Item
+    Item
   },
   // SEO
   head() {
