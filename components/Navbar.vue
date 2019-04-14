@@ -1,8 +1,6 @@
 <template>
   <div class="links">
-    <nuxt-link :to="'/create/'" class="button--green"
-      >List an item to pickup</nuxt-link
-    >
+    <nuxt-link :to="'/create/'" class="button is-link is-outlined">List an item to pickup</nuxt-link>
   </div>
 </template>
 

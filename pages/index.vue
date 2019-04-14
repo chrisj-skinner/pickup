@@ -1,10 +1,10 @@
 <template>
   <div class="has-text-centered">
-    <Logo />
-    <h1 class="title">..pickup..</h1>
-    <h2 class="subtitle">Pickup app built on nuxtjs</h2>
+    <Logo/>
+    <h1 class="title is-size-1 has-text-weight-normal is-spaced">..pickup..</h1>
+    <h2 class="subtitle is-size-3 has-text-weight-normal">Pickup app built on nuxtjs</h2>
     <div class="content">
-      <Navbar />
+      <Navbar/>
     </div>
     <div class="columns">
       <ItemCard
@@ -54,15 +54,6 @@ export default {
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
